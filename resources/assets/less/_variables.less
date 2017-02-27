@@ -1,0 +1,84 @@
+
+// Body
+@body-bg: #f5f8fa;
+
+// Borders
+@laravel-border-color: darken(@body-bg, 1%);
+// @laravel-border-color: darken(@body-bg, 10%);
+@list-group-border: @laravel-border-color;
+@navbar-default-border: @laravel-border-color;
+@panel-default-border: @laravel-border-color;
+@panel-inner-border: @laravel-border-color;
+
+// Brands
+// @brand-primary: #0275d8;
+@brand-primary: #f66;
+@brand-default: #fff;
+@brand-info: #42b983;
+@brand-success: #5cb85c;
+@brand-warning: #f0ad4e;
+@brand-danger: #d9534f;
+
+// Typography
+@icon-font-path: "~bootstrap-sass/assets/fonts/bootstrap/";
+@font-family-sans-serif: "Raleway", sans-serif;
+@font-size-base: 14px;
+@line-height-base: 1.6;
+@text-color: #34495e;
+
+// Navbar
+@navbar-default-bg: #fff;
+
+// Buttons
+@btn-default-color: @text-color;
+
+// Inputs
+@input-border: lighten(@text-color, 40%);
+@input-border-focus: lighten(@brand-primary, 25%);
+@input-color-placeholder: lighten(@text-color, 30%);
+
+// Panels
+@panel-default-heading-bg: #fff;
+@panel-default-text: #2c3e50;
+
+// border-radius 
+@border-radius-base: 1px;
+@border-radius-small: 1px;
+@border-radius-large: 2px;
+
+//input
+@input-border-focus: @brand-primary;
+
+//link
+@link-hover-decoration: none;
+@link-hover-color: #f33;
+
+
+// other 
+.bg(@bg){
+    background-color: @bg;
+}
+.translate(@x:-50%,@y:-50%){
+    -webkit-transform: translate(@x, @y);
+    -moz-transform: translate(@x, @y);
+    -ms-transform: translate(@x, @y);
+    -o-transform: translate(@x, @y);
+    transform: translate(@x, @y);
+}
+.transition(@t:all,@t:.3s){
+    -webkit-transition: all .3s ease;
+    -moz-transition: all .3s ease;
+    -ms-transition: all .3s ease;
+    -o-transition: all .3s ease;
+    transition: all .3s ease;
+}
+
+
+
+
+
+
+
+
+
+
