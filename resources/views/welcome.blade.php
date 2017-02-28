@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
     <head>
@@ -100,10 +99,10 @@
         <div id="wrapper">
             <h1>博 - 客</h1>
             <h2>读你所爱,写你所见</h2>
-            <p><a href="#" >主页</a></p>
-            <p><a href="#" >关于我</a></p>
-            <p><a href="#" >登录</a></p>
-            <p><a class="b-radius" href="#" >注册</a></p>
+            <p><a href="home" >主页</a></p>
+            <p><a href="about" >关于我</a></p>
+            <p><a href="login" >登录</a></p>
+            <p><a class="b-radius" href="register" >注册</a></p>
         </div>
         <canvas></canvas>
         <script>

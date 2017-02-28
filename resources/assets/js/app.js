@@ -13,8 +13,30 @@ require('./bootstrap');
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-Vue.component('example', require('./components/example/Example.vue'));
+import VueResource from 'vue-resource'
+Vue.use(VueResource)
 
-const app = new Vue({
-    el: '#app'
+Vue.component('articlelist', require('./components/article/List.vue'));
+Vue.component('articledetail', require('./components/article/Detail.vue'));
+
+let app = new Vue({
+    el: '#app',
+    data() {
+    	return {
+
+    	}
+    },
+    created(){
+
+    },
+    methods: {
+
+    }
+
 });
+
+
+
+
+
+
