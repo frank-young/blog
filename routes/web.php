@@ -18,6 +18,21 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index');
-Auth::routes();
 
-Route::get('/home', 'HomeController@index');
+Route::group(['middleware' => 'auth'], function() {  
+    Route::resource('article', 'ArticleController');
+    Route::get('/article/del/{article}','ArticleController@destroy');
+
+	
+    Route::get('/userinfo/show','UserinfoController@show');
+    Route::get('/userinfo/edit','UserinfoController@edit');
+    Route::post('/userinfo/update','UserinfoController@update');
+    
+});
+
+
+
+
+
+
+
