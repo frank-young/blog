@@ -27,6 +27,7 @@ Vue.component('cate', require('./components/cate/Cate.vue'));
 Vue.component('upload', require('./components/upload/Upload.vue'));
 Vue.component('avatar', require('./components/upload/Avatar.vue'));
 Vue.component('carousel', require('./components/carousel/Carousel.vue'));
+Vue.component('auth', require('./components/userinfo/Auth.vue'));
 
 let app = new Vue({
     el: '#app',

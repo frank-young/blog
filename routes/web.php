@@ -27,8 +27,8 @@ Route::group(['middleware' => 'auth'], function() {
     Route::resource('article', 'ArticleController');
     Route::get('/article/del/{article}','ArticleController@destroy');
 
-	Route::post('/image/upload', 'ImageController@upload');
-	
+    Route::post('/image/upload', 'ImageController@upload');
+    
     Route::get('/userinfo/show','UserinfoController@show');
     Route::get('/userinfo/edit','UserinfoController@edit');
     Route::post('/userinfo/update','UserinfoController@update');
@@ -42,9 +42,9 @@ Route::group(['middleware' => 'auth'], function() {
     
     Route::get('cate/create', 'CateController@create');
     Route::post('cate', 'CateController@store');
-    Route::get('cate', 'CateController@index');
+
     Route::get('cate/self', 'CateController@self');
-    Route::get('cate/{cate}', 'CateController@show');
+
 
     Route::get('message', 'messageController@index');
     Route::get('message/{message}', 'messageController@update');
@@ -53,8 +53,10 @@ Route::group(['middleware' => 'auth'], function() {
 });
 
 Route::get('/userinfo/profile/{userinfo}','UserinfoController@profile');
-
 Route::get('article/{article}', 'ArticleController@show');
+Route::get('cate', 'CateController@index');
+Route::get('cate/{cate}', 'CateController@show');
+Route::get('userinfo/auth', 'UserinfoController@auth');
 
 
 

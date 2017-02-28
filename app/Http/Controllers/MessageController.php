@@ -11,16 +11,22 @@ class MessageController extends Controller
 {
     public function new()
     {
-        $num = Message::where(['message_id' => Auth::user()->id, 'tag' =>0])->count();
+        if(Auth::check()){
+            $num = Message::where(['message_id' => Auth::user()->id, 'tag' =>0])->count();
 
         $data = ['errno'=>0, 'msg'=>'请求成功', 'num' => $num];
-		return Response::json($data);
+        return Response::json($data);
+        } else {
+
+        $data = ['errno'=>3000, 'msg'=>'未登录'];
+        return Response::json($data);
+        }
     }
     public function history()
     {
         $messages = Message::where(['message_id' => Auth::user()->id, 'tag' =>1])->get();
         $data = ['errno'=>0, 'msg'=>'请求成功', 'messages' => $messages];
-		return Response::json($data);
+        return Response::json($data);
     }
     public function index()
     {

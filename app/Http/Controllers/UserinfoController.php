@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Response;
 use Auth;
 use App\Article;
 use App\Cate;
@@ -51,4 +52,19 @@ class UserinfoController extends Controller
 	    }
         
     }
+    public function auth()
+    {
+        $auths = Userinfo::limit(10)->orderBy('created_at','desc')->get();
+        $data = ['errno'=>0, 'msg'=>'请求成功', 'auths' => $auths];
+        return Response::json($data);
+    }
 }
+
+
+
+
+
+
+
+
+

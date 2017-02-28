@@ -11215,6 +11215,7 @@ Vue.component('cate', __webpack_require__(154));
 Vue.component('upload', __webpack_require__(157));
 Vue.component('avatar', __webpack_require__(156));
 Vue.component('carousel', __webpack_require__(153));
+Vue.component('auth', __webpack_require__(181));
 
 var app = new Vue({
     el: '#app',
@@ -42361,6 +42362,203 @@ if(false) {
  if(!content.locals) {
    module.hot.accept("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-edeb0c3e!../../../../../node_modules/less-loader/index.js!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Avatar.vue", function() {
      var newContent = require("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-edeb0c3e!../../../../../node_modules/less-loader/index.js!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Avatar.vue");
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 174 */,
+/* 175 */,
+/* 176 */,
+/* 177 */,
+/* 178 */,
+/* 179 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+var ERR_OK = 0;
+var PATH = '/blog/storage/app/';
+
+/* harmony default export */ __webpack_exports__["default"] = {
+    props: {},
+    data: function data() {
+        return {
+            auths: []
+        };
+    },
+    created: function created() {
+        this._getAuth();
+    },
+
+    methods: {
+        _getAuth: function _getAuth() {
+            var _this = this;
+
+            this.$http.get('/blog/public/userinfo/auth').then(function (res) {
+                res = res.body;
+                if (res.errno === 0) {
+                    _this.auths = res.auths;
+                }
+            });
+        }
+    }
+};
+
+/***/ }),
+/* 180 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(33)();
+// imports
+
+
+// module
+exports.push([module.i, "\n.auth-wrap {\n  margin-top: 12px;\n}\n.auth-wrap .item {\n  margin-bottom: 15px;\n}\n.auth-wrap .item:after {\n  content: '';\n  display: block;\n  clear: both;\n}\n.auth-wrap .item .avatar {\n  float: left;\n}\n.auth-wrap .item .avatar img {\n  width: 50px;\n  height: 50px;\n  border-radius: 50%;\n}\n.auth-wrap .item .auth {\n  float: left;\n  margin-left: 10px;\n}\n.auth-wrap .item .auth .name-txt {\n  margin-left: 5px;\n  font-size: 16px;\n  line-height: 18px;\n}\n.auth-wrap .item .auth .name-txt a {\n  color: #34495e;\n}\n.auth-wrap .item .auth .name-txt a:hover {\n  color: #34495e;\n}\n.auth-wrap .item .auth .des {\n  margin-top: 8px;\n  font-size: 12px;\n  color: #777;\n}\n", ""]);
+
+// exports
+
+
+/***/ }),
+/* 181 */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+/* styles */
+__webpack_require__(183)
+
+var Component = __webpack_require__(36)(
+  /* script */
+  __webpack_require__(179),
+  /* template */
+  __webpack_require__(182),
+  /* scopeId */
+  null,
+  /* cssModules */
+  null
+)
+Component.options.__file = "/Users/frankyoung/Sites/blog/resources/assets/js/components/userinfo/Auth.vue"
+if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
+if (Component.options.functional) {console.error("[vue-loader] Auth.vue: functional components are not supported with templates, they should use render functions.")}
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-3b5bec38", Component.options)
+  } else {
+    hotAPI.reload("data-v-3b5bec38", Component.options)
+  }
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 182 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticClass: "row auth-wrap"
+  }, [_c('div', {
+    staticClass: "col-md-12"
+  }, [_c('div', {
+    staticClass: "panel panel-default"
+  }, [_c('div', {
+    staticClass: "panel-heading"
+  }, [_vm._v("推荐作者")]), _vm._v(" "), _c('div', {
+    staticClass: "panel-body"
+  }, [_c('div', {
+    staticClass: "items"
+  }, _vm._l((_vm.auths), function(auth) {
+    return _c('div', {
+      staticClass: "item"
+    }, [_c('div', {
+      staticClass: "avatar"
+    }, [_c('a', {
+      attrs: {
+        "href": '/blog/public/userinfo/profile/' + auth.user_id
+      }
+    }, [_c('img', {
+      attrs: {
+        "src": '/blog/storage/app/' + auth.avatar_path,
+        "alt": ""
+      }
+    })])]), _vm._v(" "), _c('div', {
+      staticClass: "auth"
+    }, [_c('span', {
+      staticClass: "name-txt"
+    }, [_c('a', {
+      attrs: {
+        "href": '/blog/public/userinfo/profile/' + auth.user_id
+      }
+    }, [_vm._v(_vm._s(auth.name))])]), _vm._v(" "), _c('div', {
+      staticClass: "des"
+    }, [_c('span', [_vm._v("注册时间：" + _vm._s(auth.created_at))])])])])
+  }))])])])])
+},staticRenderFns: []}
+module.exports.render._withStripped = true
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+     require("vue-hot-reload-api").rerender("data-v-3b5bec38", module.exports)
+  }
+}
+
+/***/ }),
+/* 183 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(180);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__(39)("41a105a2", content, false);
+// Hot Module Replacement
+if(false) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-3b5bec38!../../../../../node_modules/less-loader/index.js!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Auth.vue", function() {
+     var newContent = require("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-3b5bec38!../../../../../node_modules/less-loader/index.js!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Auth.vue");
      if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
      update(newContent);
    });

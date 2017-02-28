@@ -4,7 +4,7 @@
     <div class="row">
         <div class="col-md-8">
             <div class="panel panel-default">
-                <div class="panel-heading">个人中心</div>
+                <div class="panel-heading">作者主页</div>
                 <div class="panel-body">
                     <articlelist :token="'{{ csrf_token() }}'" :articles="{{$articles}}"></articlelist>
                 </div>

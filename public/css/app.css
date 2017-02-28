@@ -6572,6 +6572,9 @@ body {
   -webkit-transform: rotate(-45deg);
           transform: rotate(-45deg);
 }
+.mb-20 {
+  margin-bottom: 20px;
+}
 .navbar-default {
   background-color: #fff;
 }
@@ -6617,4 +6620,7 @@ body {
 }
 .navbar-nav {
   margin-left: 30px;
+}
+.side .btn-img img {
+  width: 100%;
 }
