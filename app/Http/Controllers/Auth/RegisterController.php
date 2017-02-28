@@ -62,10 +62,25 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        return User::create([
-            'name' => $data['name'],
-            'email' => $data['email'],
-            'password' => bcrypt($data['password']),
-        ]);
+        // return User::create([
+        //     'name' => $data['name'],
+        //     'email' => $data['email'],
+        //     'password' => bcrypt($data['password']),
+        // ]);
+        $user = new User;
+        $user->name = $data['name'];
+        $user->email = $data['email'];
+        $user->password = bcrypt($data['password']);
+
+        if ($user->save()) {
+            $userinfo = new Userinfo;
+            $userinfo->name = $data['name'];
+            $userinfo->user_id = $user->id;
+            $userinfo->info = '这家伙很懒噢～什么都没有留下。';
+            $userinfo->avatar_path = '/uploads/avatar.png';
+            $userinfo->save();
+            return $user;
+        }
     }
+}
 }
