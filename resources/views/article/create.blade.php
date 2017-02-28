@@ -49,7 +49,7 @@
                         <div class="form-group">
                             <label class="col-sm-2 control-label">文章签名</label>
                             <div class="col-sm-10">
-                                <input type="text" name="self_sign" class="form-control" required="required" >
+                                <input type="text" name="self_sign" class="form-control">
                             </div>
                         </div>
                         <div class="form-group">

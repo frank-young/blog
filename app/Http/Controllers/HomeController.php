@@ -16,8 +16,6 @@ class HomeController extends Controller
      */
     public function index()
     {
-        // return view('home')->withArticles(Article::all());
-        // $articles = Article::orderBy('created_at','desc')->get();
         $articles = DB::table('userinfos')
                     ->join('articles', 'userinfos.user_id', '=', 'articles.user_id')
                     ->get();

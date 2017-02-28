@@ -32,7 +32,7 @@ let app = new Vue({
     el: '#app',
     data() {
     	return {
-    		imagePath: '',
+    		imagePath: '/blog/storage/app/uploads/logo.png',
     		avatarPath: '',
     		cates: [],
     		cateName: '',
@@ -42,7 +42,7 @@ let app = new Vue({
     	}
     },
     created(){
-        // this._getMessageNum()
+        this._getMessageNum()
     },
     methods: {
     	getImagePath() {

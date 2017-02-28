@@ -50,6 +50,10 @@
 			font-weight: 16px;
 			padding: 5px 10px;
 			border-radius: 6px;
+            &:hover {
+                color: #fff;
+                background-color: #f66;
+            }
 		}
 	}
 </style>

@@ -1,6 +1,6 @@
 <template>
     <div class="row img-wrap">
-        <div class="col-md-12">
+        <div class="col-md-6 col-md-offset-3">
             <div class="img">
                 <img :src="src" alt="">
             </div>
@@ -16,6 +16,7 @@
                 </form>
             </div>
         </div>
+            
     </div>
 </template>
 
@@ -27,9 +28,6 @@
         props: {
             token: {
                 type: String
-            },
-            method: {
-                type: Function
             },
             path: {
                 type: String
@@ -73,9 +71,13 @@
 <style lang="less">
     .img-wrap {
         .img{
-            height: 300px;
+            min-height: 200px;
+            max-height: 400px;
             margin-bottom: 20px;
+            margin-top: 10px;
             background-color: #eee;
+            overflow: hidden;
+            border-radius: 5px;
             img {
                 width: 100%;
                 height: 100%;

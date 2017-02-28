@@ -11220,7 +11220,7 @@ var app = new Vue({
     el: '#app',
     data: function data() {
         return {
-            imagePath: '',
+            imagePath: '/blog/storage/app/uploads/logo.png',
             avatarPath: '',
             cates: [],
             cateName: '',
@@ -11230,7 +11230,7 @@ var app = new Vue({
         };
     },
     created: function created() {
-        // this._getMessageNum()
+        this._getMessageNum();
     },
 
     methods: {
@@ -40283,7 +40283,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "name-txt"
   }, [_c('a', {
     attrs: {
-      "href": ""
+      "href": '/blog/public/userinfo/profile/' + _vm.article[0].user_id
     }
   }, [_vm._v(_vm._s(_vm.article[0].name))])]), _vm._v(" "), _c('div', {
     staticClass: "des"
@@ -40956,6 +40956,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
 
 var ERR_OK = 0;
 var PATH = '/blog/storage/app/';
@@ -40964,9 +40965,6 @@ var PATH = '/blog/storage/app/';
     props: {
         token: {
             type: String
-        },
-        method: {
-            type: Function
         },
         path: {
             type: String
@@ -41018,7 +41016,7 @@ exports = module.exports = __webpack_require__(33)();
 
 
 // module
-exports.push([module.i, "\n.cate {\n  border-top: 1px solid #eee;\n  border-bottom: 1px solid #eee;\n  padding-top: 30px;\n  margin-top: 30px;\n  margin-bottom: 30px;\n}\n.cate .mb-20 {\n  margin-bottom: 20px;\n}\n.cate .btn-cate {\n  border: 2px solid #f66;\n  color: #f66;\n  font-weight: normal;\n  font-weight: 16px;\n  padding: 5px 10px;\n  border-radius: 6px;\n}\n", ""]);
+exports.push([module.i, "\n.cate {\n  border-top: 1px solid #eee;\n  border-bottom: 1px solid #eee;\n  padding-top: 30px;\n  margin-top: 30px;\n  margin-bottom: 30px;\n}\n.cate .mb-20 {\n  margin-bottom: 20px;\n}\n.cate .btn-cate {\n  border: 2px solid #f66;\n  color: #f66;\n  font-weight: normal;\n  font-weight: 16px;\n  padding: 5px 10px;\n  border-radius: 6px;\n}\n.cate .btn-cate:hover {\n  color: #fff;\n  background-color: #f66;\n}\n", ""]);
 
 // exports
 
@@ -41102,7 +41100,7 @@ exports = module.exports = __webpack_require__(33)();
 
 
 // module
-exports.push([module.i, "\n.img-wrap .img {\n  height: 300px;\n  margin-bottom: 20px;\n  background-color: #eee;\n}\n.img-wrap .img img {\n  width: 100%;\n  height: 100%;\n}\n.img-wrap .upload {\n  padding-bottom: 15px;\n  border-bottom: 1px solid #f2f6f8;\n  margin-bottom: 30px;\n}\n.img-wrap .upload .btn-wrap {\n  position: relative;\n  height: 35px;\n}\n.img-wrap .upload .btn-wrap .btn {\n  position: absolute;\n  top: 0;\n  left: 0;\n}\n.img-wrap .upload .btn-wrap .u-file {\n  display: block;\n  width: 70px;\n  opacity: 0;\n  filter: alpha(opacity=0);\n  z-index: 1;\n  outline: none;\n  cursor: pointer;\n}\n.img-wrap .upload .btn-wrap .u-borwer {\n  z-index: 0;\n}\n.img-wrap .upload .btn-wrap .u-submit {\n  left: 100px;\n}\n", ""]);
+exports.push([module.i, "\n.img-wrap .img {\n  min-height: 200px;\n  max-height: 400px;\n  margin-bottom: 20px;\n  margin-top: 10px;\n  background-color: #eee;\n  overflow: hidden;\n  border-radius: 5px;\n}\n.img-wrap .img img {\n  width: 100%;\n  height: 100%;\n}\n.img-wrap .upload {\n  padding-bottom: 15px;\n  border-bottom: 1px solid #f2f6f8;\n  margin-bottom: 30px;\n}\n.img-wrap .upload .btn-wrap {\n  position: relative;\n  height: 35px;\n}\n.img-wrap .upload .btn-wrap .btn {\n  position: absolute;\n  top: 0;\n  left: 0;\n}\n.img-wrap .upload .btn-wrap .u-file {\n  display: block;\n  width: 70px;\n  opacity: 0;\n  filter: alpha(opacity=0);\n  z-index: 1;\n  outline: none;\n  cursor: pointer;\n}\n.img-wrap .upload .btn-wrap .u-borwer {\n  z-index: 0;\n}\n.img-wrap .upload .btn-wrap .u-submit {\n  left: 100px;\n}\n", ""]);
 
 // exports
 
@@ -42039,7 +42037,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   return _c('div', {
     staticClass: "row img-wrap"
   }, [_c('div', {
-    staticClass: "col-md-12"
+    staticClass: "col-md-6 col-md-offset-3"
   }, [_c('div', {
     staticClass: "img"
   }, [_c('img', {

@@ -8,7 +8,7 @@
                 </div>
                 <div class="auth">
                     <span class="tag">作者</span>
-                    <span class="name-txt"><a href="">{{article[0].name}}</a></span>
+                    <span class="name-txt"><a :href="'/blog/public/userinfo/profile/' + article[0].user_id">{{article[0].name}}</a></span>
                     <div class="des">
                         <span>{{article[0].created_at}}</span>
                         <span>阅读 {{article[0].visit_num}}</span>

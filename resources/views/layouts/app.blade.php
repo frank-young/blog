@@ -35,8 +35,8 @@
                     </button>
 
                     <!-- Branding Image -->
-                    <a class="navbar-brand" href="{{ url('/') }}">
-                        {{ config('app.name', 'Laravel') }}
+                    <a class="navbar-brand" style="color:#f66;" href="{{ url('/') }}">
+                        博 - 客
                     </a>
                 </div>
 

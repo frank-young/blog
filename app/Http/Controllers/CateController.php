@@ -7,7 +7,7 @@ use App\Cate;
 use App\Article;
 use Illuminate\Support\Facades\Response;
 use Auth;
-
+use DB;
 class CateController extends Controller
 {
     public function store(Request $request)
@@ -41,7 +41,10 @@ class CateController extends Controller
 
 	public function show($id)
 	{
-	    $articles = Article::where('cate_id', $id)->get();
+	    $articles = DB::table('userinfos')
+                    ->join('articles', 'userinfos.user_id', '=', 'articles.user_id')
+                    ->where('articles.cate_id',$id)
+                    ->get();
 
 	    return view('cate/list', compact('articles'));
 	}
