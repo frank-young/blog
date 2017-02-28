@@ -14,12 +14,12 @@
         },
         data() {
             return {
-                path: '/laravel/public/cate/',
+                path: '/blog/public/cate/',
                 cates: [],
             }
         },
         created() {
-            this.$http.get('/laravel/public/cate').then((res) => {
+            this.$http.get('/blog/public/cate').then((res) => {
                 res = res.body
                 if (res.errno === 0) {
                     this.cates = res.cates

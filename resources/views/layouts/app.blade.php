@@ -9,7 +9,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>{{ config('app.name', 'Laravel') }}</title>
-
+    
     <!-- Styles -->
     <link href="http://127.0.0.1:8888/blog/public/css/app.css" rel="stylesheet">
 
@@ -43,28 +43,41 @@
                 <div class="collapse navbar-collapse" id="app-navbar-collapse">
                     <!-- Left Side Of Navbar -->
                     <ul class="nav navbar-nav">
-                        &nbsp;
+                        <li><a href="/blog/public/home">首页</a></li>
+                        <li >
+                            <a class="message-wrap" href="/blog/public/message">消息<span class="badge badge-top" v-text="num" v-show="num !== 0"></span></a>
+                        </li>
                     </ul>
 
                     <!-- Right Side Of Navbar -->
                     <ul class="nav navbar-nav navbar-right">
                         <!-- Authentication Links -->
                         @if (Auth::guest())
-                            <li><a href="{{ route('login') }}">Login</a></li>
-                            <li><a href="{{ route('register') }}">Register</a></li>
+                            <li><a href="{{ route('login') }}">登录</a></li>
+                            <li><a href="{{ route('register') }}">注册</a></li>
                         @else
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                                    {{ Auth::user()->name }} <span class="caret"></span>
+                                    {{ Auth::user()->name }} <span class="caret"></span> 
                                 </a>
 
                                 <ul class="dropdown-menu" role="menu">
                                     <li>
-                                        <a href="{{ route('logout') }}"
+                                        <a href="/blog/public/article/create">写文章</a>
+                                        </li>
+                                        <li><a href="/blog/public/userinfo/show">个人主页</a></li>
+                                        <li>
+                                            <a href="/blog/public/message">评论通知<span class="badge" v-text="num" v-show="num !== 0"></span></a>
+
+                                        </li>
+                                        <li><a href="/blog/public/userinfo/edit">个人设置</a></li>
+                                        <li>
+                                            <a href="{{ route('logout') }}"
                                             onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                                            Logout
-                                        </a>
+                                                退出
+                                            </a>
+                                        </li>
 
                                         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                             {{ csrf_field() }}
@@ -80,7 +93,8 @@
 
         @yield('content')
     </div>
-
+    <script src="https://cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <!-- Scripts -->
     <script src="http://127.0.0.1:8888/blog/public/js/app.js"></script>
 </body>

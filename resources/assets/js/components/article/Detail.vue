@@ -4,7 +4,7 @@
             <h1>{{article[0].title}} </h1>
             <div class="userinfo">
                 <div class="avatar">
-                    <img :src="'/laravel/storage/app/' + article[0].avatar_path" alt="">
+                    <img :src="'/blog/storage/app/' + article[0].avatar_path" alt="">
                 </div>
                 <div class="auth">
                     <span class="tag">作者</span>
@@ -20,7 +20,7 @@
             </div>
             <div class="content">
                 <div class="img" >
-                    <img :src="'/laravel/storage/app/' + article[0].image_path" alt="" v-show="article[0].image_path != null ">
+                    <img :src="'/blog/storage/app/' + article[0].image_path" alt="" v-show="article[0].image_path != null ">
                 </div>
                 <div class="txt">
                     {{article[0].body}}
@@ -114,7 +114,7 @@
             .sign {
                 padding:40px 20px;
                 margin-bottom: 40px;
-                font-size: 30px;
+                font-size: 20px;
                 text-align: center;
                 border-bottom: 1px solid #eee;
             }

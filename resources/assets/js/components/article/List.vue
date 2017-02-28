@@ -4,11 +4,11 @@
             <div class="col-md-12 list-item">
                 <div class="head">
                     <div class="avatar">
-                        <a :href="'/laravel/public/userinfo/profile/' + article.user_id"><img :src="'/laravel/storage/app/' +article.avatar_path" alt=""></a>
+                        <a :href="'/blog/public/userinfo/profile/' + article.user_id"><img :src="'/blog/storage/app/' +article.avatar_path" alt=""></a>
                     </div>
                     <div class="auth">
                         <span class="name-txt">
-                            <a :href="'/laravel/public/userinfo/profile/' + article.user_id">{{article.name}}</a>
+                            <a :href="'/blog/public/userinfo/profile/' + article.user_id">{{article.name}}</a>
                         </span>
                         <div class="des">
                             <span>{{article.created_at}}</span>
@@ -18,17 +18,17 @@
                 <div class="body">
                     <div class="row">
                         <div class="col-md-9">
-                            <h2 class="title"><a :href="'/laravel/public/article/' + article.id">{{ article.title }}</a></h2>
+                            <h2 class="title"><a :href="'/blog/public/article/' + article.id">{{ article.title }}</a></h2>
                             <p class="description">{{ article.description}}</p>
                         </div>
                         <div class="col-md-3" v-show="article.image_path !== null">
-                            <a :href="'/laravel/public/article/' + article.id"> <img :src="path + article.image_path" alt=""></a>
+                            <a :href="'/blog/public/article/' + article.id"> <img :src="path + article.image_path" alt=""></a>
                         </div>
                     </div>
                 </div>
                 <div class="foot">
                     <a href="" class="tag">
-                        <a :href="'/laravel/public/cate/' + article.cate_id">{{article.cate_id | setCate(cates)}}</a>
+                        <a :href="'/blog/public/cate/' + article.cate_id">{{article.cate_id | setCate(cates)}}</a>
                     </a>
                     <span class="visit">{{ article.visit_num }}</span>
                     <span class="comment">{{ article.comment_num }}</span>
@@ -53,7 +53,7 @@
         },
         data() {
             return {
-                path: '/laravel/storage/app/',
+                path: '/blog/storage/app/',
                 cates: [],
                 inArticles: this.articles.reverse(),
                 pageArticles:[],
@@ -63,7 +63,7 @@
             }
         },
         created() {
-            this.$http.get('/laravel/public/cate').then((res) => {
+            this.$http.get('/blog/public/cate').then((res) => {
                 res = res.body
                 if (res.errno === 0) {
                     this.cates = res.cates

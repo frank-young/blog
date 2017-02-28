@@ -6491,9 +6491,16 @@ button.close {
   }
 }
 * {
-  font-weight: 300 !important;
   font-family: 'PingFang SC', 'Microsoft YaHei', 'San Francisco', 'Helvetica Neue', Helvetica, Arial, 'Hiragino Sans GB', sans-serif;
   font-smoothing: antialiased;
+}
+@media (min-width: 1200px) {
+  .container {
+    width: 970px;
+  }
+}
+body {
+  background-color: #fff;
 }
 .btn {
   -webkit-transition: all .3s;
@@ -6502,8 +6509,17 @@ button.close {
   font-weight: 300;
   padding: 5px 20px;
 }
+.btn:active,
 .btn:focus {
-  outline: none;
+  outline: none !important;
+}
+.btn-line {
+  border-color: #42b983;
+  color: #42b983;
+  background-color: #fff;
+}
+.btn-radius {
+  border-radius: 40px;
 }
 .btn-link {
   -webkit-transition: all .3s;
@@ -6533,28 +6549,15 @@ button.close {
   display: inline-block;
   width: 15px;
   height: 15px;
-  border: 1px solid #f66;
+  border: 1px solid #e3e3e3;
   -webkit-transition: all .3s ease;
   transition: all .3s ease;
 }
-.checkbox > label > input[type="checkbox"] + span:focus,
 .checkbox > label > input[type="checkbox"] + span:hover {
-  background-color: #f66;
-}
-.checkbox > label > input[type="checkbox"] + span:focus:after,
-.checkbox > label > input[type="checkbox"] + span:hover:after {
-  content: '';
-  position: absolute;
-  top: 2px;
-  left: 2px;
-  width: 9px;
-  height: 4px;
-  border-left: 2px solid #fff;
-  border-bottom: 2px solid #fff;
-  -webkit-transform: rotate(-45deg);
-          transform: rotate(-45deg);
+  border-color: #f66;
 }
 .checkbox > label > input[type="checkbox"]:checked + span {
+  border-color: #f66;
   background-color: #f66;
 }
 .checkbox > label > input[type="checkbox"]:checked + span:after {
@@ -6571,4 +6574,47 @@ button.close {
 }
 .navbar-default {
   background-color: #fff;
+}
+.cate-wrap {
+  display: inline-block;
+  padding: 10px 20px;
+  color: #f66;
+  border: 2px solid #f66;
+  border-radius: 6px;
+  text-align: center;
+  font-size: 16px;
+  cursor: pointer;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+.panel-default {
+  border-color: #fff;
+}
+.panel {
+  margin-bottom: 22px;
+  background-color: #fff;
+  border: none;
+  border-radius: 1px;
+  box-shadow: none;
+}
+.dropdown-menu {
+  min-width: 125px;
+}
+.badge {
+  margin-left: 10px;
+  background-color: #f66;
+}
+.message-wrap {
+  position: relative;
+}
+.message-wrap .badge-top {
+  position: absolute;
+  right: -7px;
+  top: 7px;
+}
+.nav > li > a {
+  padding: 14px 20px;
+}
+.navbar-nav {
+  margin-left: 30px;
 }
